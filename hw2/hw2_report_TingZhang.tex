@@ -1,0 +1,133 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+%\input{mydef.tex}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{amssymb,amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{subfigure}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{url}
+\usepackage[stable]{footmisc}
+\usepackage{booktabs}
+\usepackage[square]{natbib}
+\usepackage{indentfirst}
+%\usepackage[colorlinks, linkcolor=red, anchorcolor=purple, citecolor=blue]{hyperref}
+\usepackage{hyperref}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\setlength{\headheight}{13.6pt}
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{CS 57800} % Top left header
+\chead{}
+\rhead{Homework} % Top right header
+\lfoot{} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\setlength{\parskip}{.2\baselineskip}
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\title{
+\textbf{CS57800 Statistical Machine Learning} \\ \textsc{Homework 2} \\
+\normalsize\vspace{0.1in}
+}
+
+\author{
+	\textbf{Ting Zhang} \\
+	School of Industrial Engineering\\
+	\texttt{zhan1013@purdue.edu}
+}
+
+\date{\today}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+%\thispagestyle{empty}
+
+\section{Foundations}
+\begin{itemize}
+\item[1.]
+(1) Boolean function \\
+\(f(x_1,x_2,x_3,x_4)=\neg[(x_1\wedge \neg x_2\wedge \neg x_3\wedge\neg x_4)\vee
+                     (\neg x_1\wedge  x_2\wedge \neg x_3\wedge\neg x_4)\vee
+										 (\neg x_1\wedge \neg x_2\wedge  x_3\wedge\neg x_4)\vee
+										 (\neg x_1\wedge \neg x_2\wedge \neg x_3\wedge x_4)\vee
+										 (\neg x_1\wedge \neg x_2\wedge \neg x_3\wedge \neg x_4)] \) \\
+(2) Linear function
+\(f(x_1,x_2,x_3,x_4)=1 if x_1+x_2+x_3+x_4 \geq 2\)
+\item[2.]
+\(size(CON_B)=2^n \)
+\item[3.]
+Since \(\beta_n = \beta_o+y_i u_i \), then
+\begin{align*}
+\|\beta_n-\beta^*\|^2 &=\|\beta_o+y_i u_i-\beta^*\|^2 \\
+                      &=(\beta_o-\beta^*)^2+2y_i u_i(\beta_o-\beta^*)+(y_i u_i)^2 \\
+											&=(\beta_o-\beta^*)^2+2(\beta_o y_i u_i-\beta^*y_i u_i)+(y_i u_i)^2
+\end{align*}
+Since \(u_i={x_i}^*/\|{x_i}^*\|\), then \(u_i=\pm 1\). Also, because \(u_i\) is a misclassified example, then \(y_i \cdot (\beta_o u_i)=-1\). Because \(\beta^*\) is the final separating parameter vector, we will have \(y_i \cdot (\beta^* u_i)=1\). Substitute these values into the above equation, we will have:
+\begin{align*}
+\|\beta_n-\beta^*\|^2 &=\|\beta_o-\beta^*\|^2+2(-1-1)+1 \\
+                      &=\|\beta_o-\beta^*\|^2-3 \\
+											& \leq \|\beta_o-\beta^*\|^2-1
+\end{align*}
+\item[4.]
+
+\item[5.]
+(1) Both classifiers will converge since the data is linearly separable.
+(2) The training error of the first classifier would be 50\%. And the training error for the second classifier would be 0\% since the data is linearly separable.
+\item[6.]
+Proof.
+\begin{align*}
+\|\sum_{i\in N} y_i x_i\| & = \|\sum_{i\in N} (w_{i+1}-w_i)\| \\
+                          & = \| (w_{i+1}-w_i)+(w_i-w_{i-1})+(w_{i-1}-w_{i-2})+...+(w_1-w_0) \| \\
+													& = \|w_{i+1}\| \\
+													& = \sqrt{(\|w_{i+1}\|^2-\|w_i\|^2)+(\|w_i\|^2-\|w_{i-1}\|^2)+...+(w_1^2-w_0^2)} \\
+													& = \sqrt{\sum_{i\in N} (\|w_{i+1}\|^2-\|w_i\|^2)} \\
+													& = \sqrt{\sum_{i\in N} (\|w_i+y_i x_i\|^2-\|w_i\|^2)} \\
+													& = \sqrt{\sum_{i\in N} (\|w_i\|^2+2y_i w_i x_i+\|y_i x_i\|^2-\|w_i\|^2)} \\
+													& = \sqrt{\sum_{i\in N} (2y_i w_i x_i+\|x_i\|^2)}
+\end{align*}
+Since these are the examples when Peceptron makes a mistake, therefore, \(y_i w_i x_i\leq 0\). So,
+\begin{align*}
+\|\sum_{i\in N} y_i x_i\| & \leq \sqrt{\sum_{i\in N} \|x_i\|^2}
+\end{align*}
+\end{itemize}
+\\
+
+\section{Programming Report}
+...
+
+%\nocite{*}
+%\bibliographystyle{plainnat}
+%\bibliography{all}
+
+\end{document}
