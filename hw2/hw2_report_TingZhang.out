@@ -1,2 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Foundations}{}% 1
 \BOOKMARK [1][-]{section.2}{Programming Report}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Feature Extraction}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Perceptron and Winnow Algorithm}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Experiment and Results}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Perceptron algorithm}{subsection.2.3}% 6
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Winnow algorithm}{subsection.2.3}% 7
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Comparisons}{subsection.2.3}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Conclusions and Future Work}{section.2}% 9
