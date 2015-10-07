@@ -95,15 +95,18 @@ Since \(\beta_n = \beta_o+y_i u_i \), then
                       &=(\beta_o-\beta^*)^2+2y_i u_i(\beta_o-\beta^*)+(y_i u_i)^2 \\
 											&=(\beta_o-\beta^*)^2+2(\beta_o y_i u_i-\beta^*y_i u_i)+(y_i u_i)^2
 \end{align*}
-Since \(u_i={x_i}^*/\|{x_i}^*\|\), then \(u_i=\pm 1\). Also, because \(u_i\) is a misclassified example, then \(y_i \cdot (\beta_o u_i)=-1\). Because \(\beta^*\) is the final separating parameter vector, we will have \(y_i \cdot (\beta^* u_i)=1\). Substitute these values into the above equation, we will have:
+Since \(u_i={x_i}^*/\|{x_i}^*\|\), then \(u_i=\pm 1\). Also, because \(u_i\) is a misclassified example, then \(y_i \cdot (\beta_o u_i)<0\). Because \(\beta^*\) is the final separating parameter vector, we will have \(y_i \cdot (\beta^* u_i) \geq 1\) (Proved later). Substitute these values into the above equation, we will have:
 \begin{align*}
-\|\beta_n-\beta^*\|^2 &=\|\beta_o-\beta^*\|^2+2(-1-1)+1 \\
-                      &=\|\beta_o-\beta^*\|^2-3 \\
-											& \leq \|\beta_o-\beta^*\|^2-1
+\|\beta_n-\beta^*\|^2 & \leq \|\beta_o-\beta^*\|^2+2(0-1)+1 \\
+                      &=\|\beta_o-\beta^*\|^2-1 
 \end{align*}
+To prove \(y_i \cdot (\beta^* u_i) \geq 1\): Since we can finally separate these data, here we assume \(\beta\) is the separating hyperplane, then we have \(y_i \cdot (\beta u_i)>0\) for every \(u_i\). Let's assume \(m\) is the minimum value of this product, then we can have \(y_i \cdot (\beta x_i) \geq m>0\). Move \(m\) to the left side of the inequality, we will have \(y_i \cdot (\beta/m x_i) \geq 1\). Since  \(\beta^*\) is the final separating parameter vector, we have    \(\beta^*=\beta/m\), such that \(y_i \cdot (\beta^* u_i) \geq 1\).
 \item[4.]
-initialize \(w=1\)
-if \(f(x)=1\), eliminate all \(x_i\) that equals 0
+Assume there are \(n\) Boolean varaibles, defined as \(x_1,x_2,x_3,...,x_n\). To learn the conjunction function consistituted with these variables, we denoted the learnt function as \(f(x)\).\\
+First, we initialize the function as: \(f(x)=x_1 \wedge x_2 \wedge ... \quad x_n \wedge \neg x_1 \wedge \neg x_2 \wedge ... \neg x_n\)\\
+Then, we start learning this function by passing examples one by one. We can observe that this function can only make mistakes on positive examples, therefore, we can learn this function with positive examples.\\
+if there is an mistake, eliminate all items that equals 0 in the example from the learnt function \(f(x)\). The  item here refers to one item in \(f(x)\). For example, \(x_i\) and \(\neg x_i\) are both iterms of the function. Then in the first example, half of the items in \(f(x)\) will be eliminated since the initial \(f(x)\) contains both the variable and the negation of the variable. If \(x_i=1\), then \(\neg x_i\) must be 0. Therefore, you can only have one of these two left after the first example, which means half of the items were eliminated.\\
+After the first positive mistake, when it comes another positive mistake, the items equal \(0\) will be eliminated. This procedure continues until no more mistakes are made. This is a mistake bound algorithm, since for each mistake it made, at least one item will be eliminated. After the first positive example, there are \(n\) items left, and for these \(n\) items, there are at most \(n\) mistakes. Therefore, this algorithm is bounded for \(n+1\) mistakes.
 \item[5.]
 (1) Both classifiers will converge since the data is linearly separable. However, the one with sorted dataset may converge slower than the one with randomized order.
 (2) The training error of the first classifier would be 0\%. And the training error for the second classifier would be 0\% since the data is linearly separable.
