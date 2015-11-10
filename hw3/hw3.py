@@ -4,6 +4,7 @@
 
 import sys
 import re
+import math
 from collections import Counter
 import csv
 
@@ -151,7 +152,7 @@ def predict_one(w,input_snippet):
 def add_reg(g,lmbd,w,reg):
     #g = g - lmbd * (w.weight^(reg - 1))
     for i in w.weight:
-        w.weight[i] = lmbd * w.weight[i]^(reg - 1)
+        w.weight[i] = lmbd * w.weight[i]**(reg - 1)
         g[i] = g[i] - w.weight[i]
 
     return g
@@ -177,21 +178,26 @@ def GD(maxIterations, regularization, stepSize, lmbd, featureSet,data,w):
     i = 0
     while i < maxIterations:
         # iterate over all training samples
+        #loss = 0
         g = dict.fromkeys(w.weight, 0)
         gb = 0
         for entry in data:
             feature = get_feature(featureSet, entry)
             sign = predict_one(w,feature)
             if sign * entry.label <= 1:
+                #loss = loss + 1 - entry.label * sign
                 for one_feature in feature:
                     if one_feature in w.weight:
                         g[one_feature] = g[one_feature] + entry.label
                 gb = gb + entry.label
 
         # add regularization term
-        g = add_reg(g,lmbd,w,reg)
-        w = update_weight(w,g,gb,stepSize)
+        g = add_reg(g, lmbd, w, reg)
+        w = update_weight(w, g, gb, stepSize)
 
+        # print erro in this iteration
+        #loss = loss + w.b + sum(w.weight.itervalues())
+        #print "loss in ", i, " iteration: ", loss
         # go to next iteration
         i = i + 1
 
@@ -241,7 +247,10 @@ def get_performance(featureSet, weights,data):
         recall = float('inf')
     else:
         recall = 1.0 * true_positive / (true_positive + false_negative)
-    f_score = 2.0 * precision * recall / (precision + recall)
+    if (precision + recall) == 0:
+        f_score = float('inf')
+    else:
+        f_score = 2.0 * precision * recall / (precision + recall)
 
     performance = [accuracy, precision, recall, f_score]
 
@@ -264,8 +273,8 @@ def main():
     numOfExp = 3
     expName = ['Unigram','Bigram','Both']
     expId = 1
-    hyperP = 7
-    stepSize = 1
+    hyperP = 1000
+    stepSize = 0.0003
     lmbd = 1
 
     trainP_l1 = [[[]]for x in range(numOfExp)]
@@ -281,8 +290,8 @@ def main():
         weightP.weight = wd
         while maxIterations < hyperP:
             print "maxIterations: ", maxIterations
-            weightP.weight = dict.fromkeys(weightP.weight, 0)
-            weightP.b = 0
+            weightP.weight = dict.fromkeys(weightP.weight, 0.0)
+            weightP.b = 0.0
             # train with GD of high loss and l1 norm
             weightP = GD(maxIterations,'l1',stepSize,lmbd,expId,db_tr.entry,weightP)
 
