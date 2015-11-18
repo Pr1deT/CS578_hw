@@ -151,9 +151,14 @@ def predict_one(w,input_snippet):
 
 def add_reg(g,lmbd,w,reg):
     #g = g - lmbd * (w.weight^(reg - 1))
+    r = lmbd
     for i in w.weight:
-        w.weight[i] = lmbd * w.weight[i]**(reg - 1)
-        g[i] = g[i] - w.weight[i]
+        if reg == 1 :
+            if w.weight[i] < 0:
+                r = lmbd * (-1.0)
+        else:
+            r = lmbd * w.weight[i]**(reg - 1)
+        g[i] = g[i] - r
 
     return g
 
@@ -166,7 +171,14 @@ def update_weight(w,g,gb,stepSize):
     return w
 
 ## Gradient Descent Algorithm
-def GD(maxIterations, regularization, stepSize, lmbd, featureSet,data,w):
+def GD(maxIterations, regularization, stepSize, lmbd, featureSet,data,w,db_va,db_te):
+    # record performance of each iteration
+    testOn = 1
+    expName = ['Unigram','Bigram','Both']
+    trainP = [[]]
+    validateP = [[]]
+    testP = [[]]
+
     if regularization == 'l1':
         reg = 1
     elif regularization == 'l2':
@@ -178,10 +190,11 @@ def GD(maxIterations, regularization, stepSize, lmbd, featureSet,data,w):
     i = 0
     while i < maxIterations:
         # iterate over all training samples
+        print "maxIterations: ", i+1
         #loss = 0
         g = dict.fromkeys(w.weight, 0)
         gb = 0
-        for entry in data:
+        for entry in data.entry:
             feature = get_feature(featureSet, entry)
             sign = predict_one(w,feature)
             if sign * entry.label <= 1:
@@ -198,8 +211,36 @@ def GD(maxIterations, regularization, stepSize, lmbd, featureSet,data,w):
         # print erro in this iteration
         #loss = loss + w.b + sum(w.weight.itervalues())
         #print "loss in ", i, " iteration: ", loss
+
+        # compute performance for one iteration
+        trainP = trainP + [get_performance(featureSet,w,data.entry)]
+        print "Train Accuracy of GD, ", regularization, " with ",expName[featureSet-1],": ", trainP[i+1]
+        validateP = validateP + [get_performance(featureSet,w,db_va.entry)]
+        print "Validate Accuracy of GD,", regularization, "with ",expName[featureSet-1],": ", validateP[i+1]
+
+        # do test
+        if testOn == 1:
+            testP = testP + [get_performance(featureSet,w,db_te.entry)]
+            print "Test Accuracy of GD, ", regularization, " with ",expName[featureSet-1],": ", testP[i+1]
+
         # go to next iteration
         i = i + 1
+
+    # Saving the results:
+    save_flag = 0
+    if save_flag == 1:
+        Validatefile = "validate_" + regularization +"_" + expName[featureSet-1] + ".csv"
+        Trainfile = "train_"+ regularization +"_" + expName[featureSet-1] + ".csv"
+        Testfile = "test_"+ regularization +"_" + expName[featureSet-1] + ".csv"
+        with open(Validatefile, "w") as output:
+            writer = csv.writer(output, lineterminator='\n')
+            writer.writerows(validateP)
+        with open(Trainfile, "w") as output:
+            writer = csv.writer(output, lineterminator='\n')
+            writer.writerows(trainP)
+        with open(Testfile, "w") as output:
+            writer = csv.writer(output, lineterminator='\n')
+            writer.writerows(testP)
 
     return w
 
@@ -218,7 +259,7 @@ def get_wd(type,wd):
 ##Compute accuracy
 #-------
 def get_performance(featureSet, weights,data):
-    accuracy = 0
+    accuracy = 0.0
     true_positive = 0
     false_positive = 0
     true_negative = 0
@@ -226,7 +267,8 @@ def get_performance(featureSet, weights,data):
     for one in data:
         feature = get_feature(featureSet,one)
         sign = predict_one(weights,feature)
-        if 1.0*sign*one.label>1:
+        #sign = sign / abs(sign)
+        if 1.0*sign*one.label>0.0:
             accuracy = accuracy + 1
             if one.label == 1:
                 true_positive = true_positive + 1
@@ -271,53 +313,25 @@ def main():
     # 2. Experiment with Bigram feature set
     # 3. Experiment with both feature set
     numOfExp = 3
-    expName = ['Unigram','Bigram','Both']
     expId = 1
-    hyperP = 1000
-    stepSize = 0.0003
+    maxIterations = 1000
+    stepSize = 0.0001
     lmbd = 1
 
-    trainP_l1 = [[[]]for x in range(numOfExp)]
-    validateP_l1 = [[[]]for x in range(numOfExp)]
-
-    trainP_l2 = [[[]]for x in range(numOfExp)]
-    validateP_l2 = [[[]]for x in range(numOfExp)]
-
     while expId <= numOfExp:
-        maxIterations = 1
         wd = get_wd(expId,db_tr)
         weightP = myWeight()
         weightP.weight = wd
-        while maxIterations < hyperP:
-            print "maxIterations: ", maxIterations
-            weightP.weight = dict.fromkeys(weightP.weight, 0.0)
-            weightP.b = 0.0
-            # train with GD of high loss and l1 norm
-            weightP = GD(maxIterations,'l1',stepSize,lmbd,expId,db_tr.entry,weightP)
 
-            trainP_l1[expId-1] = trainP_l1[expId-1] + [get_performance(expId,weightP,db_tr.entry)]
-            print "Train Accuracy of GD, l1 with ",expName[expId-1],": ", trainP_l1[expId-1][maxIterations]
-            validateP_l1[expId-1] = validateP_l1[expId-1] + [get_performance(expId,weightP,db_va.entry)]
-            print "Validate Accuracy of GD, l1 with ",expName[expId-1],": ", validateP_l1[expId-1][maxIterations]
+        # train with GD of hinge loss and l1 norm (includ validate and test)
+        weightP.weight = dict.fromkeys(weightP.weight, 0.0)
+        weightP.b = 0.0
+        weightP = GD(maxIterations,'l1',stepSize,lmbd,expId,db_tr,weightP,db_va,db_te)
 
-            # train with GD of high loss and l2 norm
-            weightP.weight = dict.fromkeys(weightP.weight, 0)
-            weightP.b = 0
-            # train with GD of high loss and l1 norm
-            weightP = GD(maxIterations,'l2',stepSize,lmbd,expId,db_tr.entry,weightP)
-
-            trainP_l2[expId-1] = trainP_l2[expId-1] + [get_performance(expId,weightP,db_tr.entry)]
-            print "Train Accuracy of GD, l2 with ",expName[expId-1],": ", trainP_l2[expId-1][maxIterations]
-            validateP_l2[expId-1] = validateP_l2[expId-1] + [get_performance(expId,weightP,db_va.entry)]
-            print "Validate Accuracy of GD, l2 with ",expName[expId-1],": ", validateP_l2[expId-1][maxIterations]
-
-                #if testOn == 1:
-                    #if maxIterations == optIter[0][expId-1]:
-                        #testErrP = get_err('perceptron',expId,weightP,db_te.entry)
-                        #print "Test Accuracy of GD with ",expName[expId-1],": ", testErrP
-                        #break
-            # tune hyperparameter: max iteration number
-            maxIterations = maxIterations +1
+        # train with GD of hinge loss and l2 norm
+        weightP.weight = dict.fromkeys(weightP.weight, 0)
+        weightP.b = 0
+        weightP = GD(maxIterations,'l2',stepSize,lmbd,expId,db_tr,weightP,db_va,db_te)
 
         # experiment for next feature set
         expId = expId + 1

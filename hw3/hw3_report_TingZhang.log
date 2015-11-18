@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 NOV 2015 16:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 NOV 2015 00:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,31 +405,66 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip68
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count133
+\float@exts=\toks25
+\float@box=\box31
+\@float@everytoks=\toks26
+\@floatcapt=\box32
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks27
+\c@algorithm=\count134
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count135
+\c@ALG@rem=\count136
+\c@ALG@nested=\count137
+\ALG@tlm=\skip69
+\ALG@thistlm=\skip70
+\c@ALG@Lnr=\count138
+\c@ALG@blocknr=\count139
+\c@ALG@storecount=\count140
+\c@ALG@tmpcounter=\count141
+\ALG@tmplength=\skip71
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
-\c@tracingmulticols=\count133
-\mult@box=\box31
+\c@tracingmulticols=\count142
+\mult@box=\box33
 \multicol@leftmargin=\dimen148
-\c@unbalance=\count134
-\c@collectmore=\count135
-\doublecol@number=\count136
-\multicoltolerance=\count137
-\multicolpretolerance=\count138
+\c@unbalance=\count143
+\c@collectmore=\count144
+\doublecol@number=\count145
+\multicoltolerance=\count146
+\multicolpretolerance=\count147
 \full@width=\dimen149
 \page@free=\dimen150
 \premulticols=\dimen151
 \postmulticols=\dimen152
-\multicolsep=\skip69
-\multicolbaselineskip=\skip70
-\partial@page=\box32
-\last@line=\box33
+\multicolsep=\skip72
+\multicolbaselineskip=\skip73
+\partial@page=\box34
+\last@line=\box35
 \maxbalancingoverflow=\dimen153
-\mult@rightbox=\box34
-\mult@grightbox=\box35
-\mult@gfirstbox=\box36
-\mult@firstbox=\box37
-\@tempa=\box38
-\@tempa=\box39
+\mult@rightbox=\box36
+\mult@grightbox=\box37
+\mult@gfirstbox=\box38
+\mult@firstbox=\box39
 \@tempa=\box40
 \@tempa=\box41
 \@tempa=\box42
@@ -445,53 +480,145 @@ Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \@tempa=\box52
 \@tempa=\box53
 \@tempa=\box54
-\c@columnbadness=\count139
-\c@finalcolumnbadness=\count140
+\@tempa=\box55
+\@tempa=\box56
+\c@columnbadness=\count148
+\c@finalcolumnbadness=\count149
 \last@try=\dimen154
 \multicolovershoot=\dimen155
 \multicolundershoot=\dimen156
-\mult@nat@firstbox=\box55
-\colbreak@box=\box56
-\mc@col@check@num=\count141
+\mult@nat@firstbox=\box57
+\colbreak@box=\box58
+\mc@col@check@num=\count150
 )
-(./hw3_report_TingZhang.aux)
+(./hw3_report_TingZhang.aux
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:c' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:c' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+
+LaTeX Warning: Label `fig:a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:a' multiply defined.
+
+
+LaTeX Warning: Label `fig:b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:b' multiply defined.
+
+)
 \openout1 = `hw3_report_TingZhang.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             macros/latex/contrib/pageslts/ 
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 71.
-
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+(lastpage)             ! on input line 73.
+ (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
+\scratchcounter=\count151
 \scratchdimen=\dimen157
-\scratchbox=\box57
-\nofMPsegments=\count143
-\nofMParguments=\count144
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count145
+\scratchbox=\box59
+\nofMPsegments=\count152
+\nofMParguments=\count153
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count154
 \MPscratchDim=\dimen158
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
-\everyMPtoPDFconversion=\toks26
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
+\everyMPtoPDFconversion=\toks29
 ) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -507,9 +634,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count148
-\AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 71.
+\c@lstlisting=\count157
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 73.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -517,79 +644,308 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count149
+\c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
 
 (./hw3_report_TingZhang.out) (./hw3_report_TingZhang.out)
 \@outlinefile=\write3
 \openout3 = `hw3_report_TingZhang.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 75.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 77.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+<hw3_q4.png, id=33, 562.1pt x 421.575pt>
+File: hw3_q4.png Graphic file (type png)
+ <use hw3_q4.png>
+Package pdftex.def Info: hw3_q4.png used on input line 96.
+(pdftex.def)             Requested size: 234.87749pt x 176.15327pt.
+ [1
 
-LaTeX Warning: Reference `•' on page 1 undefined on input line 90.
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2pdfTe
+X warning (ext4): destination with the same identifier (name{figure.1}) has bee
+n already used, duplicate ignored
 
-[1
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.136 \end{align*}
+                   <./hw3_q4.png (PNG copy)>] [3]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 172.
+ [4]
+<I1_uni.png, id=79, 903.375pt x 217.7736pt>
+File: I1_uni.png Graphic file (type png)
+ <use I1_uni.png>
+Package pdftex.def Info: I1_uni.png used on input line 206.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<I1_bi.png, id=81, 903.375pt x 217.7736pt>
+File: I1_bi.png Graphic file (type png)
+ <use I1_bi.png>
+Package pdftex.def Info: I1_bi.png used on input line 207.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I1_both.png, id=82, 903.375pt x 217.7736pt>
+File: I1_both.png Graphic file (type png)
+ <use I1_both.png>
+Package pdftex.def Info: I1_both.png used on input line 208.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+Overfull \hbox (3.65pt too wide) in paragraph at lines 208--210
+ [][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 214.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 230.
+
+<I1_uni_tr.png, id=91, 903.375pt x 217.7736pt>
+File: I1_uni_tr.png Graphic file (type png)
+ <use I1_uni_tr.png>
+Package pdftex.def Info: I1_uni_tr.png used on input line 248.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I1_uni_va.png, id=92, 903.375pt x 217.7736pt>
+File: I1_uni_va.png Graphic file (type png)
+ <use I1_uni_va.png>
+Package pdftex.def Info: I1_uni_va.png used on input line 249.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I1_bi_tr.png, id=93, 903.375pt x 217.7736pt>
+File: I1_bi_tr.png Graphic file (type png)
+ <use I1_bi_tr.png>
+Package pdftex.def Info: I1_bi_tr.png used on input line 257.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I1_bi_va.png, id=94, 903.375pt x 217.7736pt>
+File: I1_bi_va.png Graphic file (type png)
+ <use I1_bi_va.png>
+Package pdftex.def Info: I1_bi_va.png used on input line 258.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I1_bo_tr.png, id=95, 903.375pt x 217.7736pt>
+File: I1_bo_tr.png Graphic file (type png)
+ <use I1_bo_tr.png>
+Package pdftex.def Info: I1_bo_tr.png used on input line 266.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I1_bo_va.png, id=96, 903.375pt x 217.7736pt>
+File: I1_bo_va.png Graphic file (type png)
+ <use I1_bo_va.png>
+Package pdftex.def Info: I1_bo_va.png used on input line 267.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I2_uni.png, id=97, 903.375pt x 217.7736pt>
+File: I2_uni.png Graphic file (type png)
+ <use I2_uni.png>
+Package pdftex.def Info: I2_uni.png used on input line 275.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I2_bi.png, id=98, 903.375pt x 217.7736pt>
+File: I2_bi.png Graphic file (type png)
+ <use I2_bi.png>
+Package pdftex.def Info: I2_bi.png used on input line 276.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I2_both.png, id=99, 903.375pt x 217.7736pt>
+File: I2_both.png Graphic file (type png)
+ <use I2_both.png>
+Package pdftex.def Info: I2_both.png used on input line 277.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+Overfull \hbox (3.65pt too wide) in paragraph at lines 277--279
+ [][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I2_uni_tr.png, id=100, 903.375pt x 217.7736pt>
+File: I2_uni_tr.png Graphic file (type png)
+ <use I2_uni_tr.png>
+Package pdftex.def Info: I2_uni_tr.png used on input line 285.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I2_uni_va.png, id=101, 903.375pt x 217.7736pt>
+File: I2_uni_va.png Graphic file (type png)
+ <use I2_uni_va.png>
+Package pdftex.def Info: I2_uni_va.png used on input line 286.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I2_bi_tr.png, id=102, 903.375pt x 217.7736pt>
+File: I2_bi_tr.png Graphic file (type png)
+ <use I2_bi_tr.png>
+Package pdftex.def Info: I2_bi_tr.png used on input line 294.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I2_bi_va.png, id=103, 903.375pt x 217.7736pt>
+File: I2_bi_va.png Graphic file (type png)
+ <use I2_bi_va.png>
+Package pdftex.def Info: I2_bi_va.png used on input line 295.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<I2_both_tr.png, id=104, 903.375pt x 217.7736pt>
+File: I2_both_tr.png Graphic file (type png)
+ <use I2_both_tr.png>
+Package pdftex.def Info: I2_both_tr.png used on input line 303.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+<I2_both_va.png, id=105, 903.375pt x 217.7736pt>
+File: I2_both_va.png Graphic file (type png)
+ <use I2_both_va.png>
+Package pdftex.def Info: I2_both_va.png used on input line 304.
+(pdftex.def)             Requested size: 469.75499pt x 113.2429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 AED: lastpage setting LastPage
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
- (./hw3_report_TingZhang.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+[5pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{table.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                    ] [6pdfTeX warning (ext4): destination with the same identi
+fier (name{figure.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I1_uni.png> <./I1_bi.png> <./I1_both.png>] [7pdfTeX war
+ning (ext4): destination with the same identifier (name{figure.3}) has been alr
+eady used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I1_uni_tr.png> <./I1_uni_va.png> <./I1_bi_tr.png> <./I1
+_bi_va.png>] [8pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I1_bo_tr.png> <./I1_bo_va.png>] [9pdfTeX warning (ext4)
+: destination with the same identifier (name{figure.6}) has been already used, 
+duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I2_uni.png> <./I2_bi.png> <./I2_both.png>] [10pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.7}) has been al
+ready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I2_uni_tr.png> <./I2_uni_va.png> <./I2_bi_tr.png> <./I2
+_bi_va.png>] [11pdfTeX warning (ext4): destination with the same identifier (na
+me{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.314 \end{document}
+                     <./I2_both_tr.png> <./I2_both_va.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
+
+(./hw3_report_TingZhang.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
 Package rerunfilecheck Info: File `hw3_report_TingZhang.out' has not changed.
-(rerunfilecheck)             Checksum: 70CAF7BE9E9EE4EA90CE5CA3C3FE9907;99.
+(rerunfilecheck)             Checksum: B1C155F0272D2B4DAAB37BD2076F4E11;427.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 9223 strings out of 493117
- 135383 string characters out of 6135433
- 239707 words of memory out of 5000000
- 12542 multiletter control sequences out of 15000+600000
- 15550 words of font info for 57 fonts, out of 8000000 for 9000
+ 10023 strings out of 493117
+ 146841 string characters out of 6135433
+ 255937 words of memory out of 5000000
+ 13259 multiletter control sequences out of 15000+600000
+ 16150 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,11n,43p,434b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,12n,43p,1019b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on hw3_report_TingZhang.pdf (2 pages, 140874 bytes).
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on hw3_report_TingZhang.pdf (11 pages, 1366265 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 
